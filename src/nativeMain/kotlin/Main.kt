@@ -29,19 +29,6 @@ fun main() {
                     t = 0
                 }
             }
-
-//            if(time < 24) {
-//                hours = time
-//            }
-//            else if(time >= 24/* && time <= (24*7)*/) {
-//                days = (time/24f).toString()[0].toInt()
-//                hours = time - (((time/24f).toString()[0].toInt())*24)
-//            }
-//            else if(time >= (24*7) && time <= ((24*7)*4)) {
-//                weeks =
-//                days = (time/24f).toString()[0].toInt()
-//                hours = time - (((time/24f).toString()[0].toInt())*24)
-//            }
             return "${if (years != 0) "$years year${if (years != 1) "s" else ""}, " else ""}${if (months != 0) "$months month${if (months != 1) "s" else ""}, " else ""}${if (weeks != 0) "$weeks week${if (weeks != 1) "s" else ""}, " else ""}${if (days != 0) "$days day${if (days != 1) "s" else ""}, " else ""}${if (years != 0 || months != 0 || weeks != 0 || days != 0) "and " else ""}$hours hour${if (hours != 1) "s" else ""}"
         }
         fun timeElapsedShort(): String {
@@ -71,9 +58,7 @@ fun main() {
                 }
             }
 
-            return "${
-                if (years != 0) "$years year${if (years != 1) "s" else ""}" else if (months != 0) "$months month${if (months != 1) "s" else ""}" else if (weeks != 0) "$weeks week${if (weeks != 1) "s" else ""}" else if (days != 0) "$days day${if (days != 1) "s" else ""}" else "$hours hour${if (hours != 1) "s" else ""}"
-            }"
+            return if (years != 0) "$years year${if (years != 1) "s" else ""}" else if (months != 0) "$months month${if (months != 1) "s" else ""}" else if (weeks != 0) "$weeks week${if (weeks != 1) "s" else ""}" else if (days != 0) "$days day${if (days != 1) "s" else ""}" else "$hours hour${if (hours != 1) "s" else ""}"
         }
         fun returnWithMilk() {
             println("Dad has left the store and is returning home with the milk.")
